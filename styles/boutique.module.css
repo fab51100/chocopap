@@ -1,0 +1,110 @@
+/* boutique.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffd543;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start; /* Fixer l'alignement vertical pour que la barre de filtres ne bouge pas */
+}
+
+.filtresContainer {
+  flex: 0 0 250px; /* Largeur fixe pour la barre de filtres */
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
+  min-height: 400px; /* Hauteur minimale pour que la barre de filtres soit stable */
+  max-height: 600px; /* Hauteur maximale, avec défilement si nécessaire */
+  overflow-y: auto; /* Activer le défilement si le contenu dépasse */
+  position: sticky;
+  top: 20px; /* Barre de filtres fixe avec une distance du haut */
+}
+
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-grow: 1; /* Les produits prennent l'espace restant */
+}
+
+.productCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1 1 250px; /* Taille minimale des produits : 250px */
+  max-width: 250px;
+  min-width: 250px;
+  max-height: 400px;
+}
+
+.productImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.addToCartButton {
+  background-color: #55c0cf;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.addToCartButton:hover {
+  background-color: #16a085;
+}
+
+.noProductsMessage {
+  color: #888;
+  font-size: 1.2rem;
+  text-align: center;
+  flex-basis: 100%; /* Utilise toute la largeur disponible */
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filtresContainer,
+  .productGrid {
+    max-width: 250px;
+    width: 100%; /* Assure que les filtres et produits ont la même largeur */
+  }
+
+  .productGrid {
+    flex-direction: column; /* Les produits passent en colonne sur mobile */
+  }
+}

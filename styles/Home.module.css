@@ -1,0 +1,43 @@
+/* Home.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Utilise 100% de la hauteur de la fenêtre */
+  overflow: hidden; /* Empêche le défilement */
+}
+
+.main {
+  flex: 1; /* Prend tout l'espace restant entre le header et le footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Empêche le débordement */
+  max-height: 100%; /* Limite la hauteur pour éviter les débordements */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #2c1e1e; /* Couleur de fond du footer */
+  color: #ffffff; /* Couleur du texte */
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Sur mobile, les éléments du footer seront en colonne */
+    padding: 20px;
+  }
+
+  .main {
+    height: calc(
+      100vh - 50px
+    ); /* Ajuste la hauteur pour inclure le header et footer */
+  }
+}
